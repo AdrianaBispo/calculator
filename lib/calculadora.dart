@@ -38,12 +38,13 @@ class _HomePageState extends State<HomePage> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
                 height: size.height * .3, // 1/3
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.zero),
-                  border: Border.all( //bottom
-                    width: 0.5,
-                    color: const Color(0xffe6e6e6),
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 0.7,
+                      color: Color(0xffe6e6e6),
+                    ),
                   ),
                 ),
                 child: Text(
@@ -247,7 +248,6 @@ class _HomePageState extends State<HomePage> {
                       value: '=',
                       pressed: () => setState(() {
                         userInput = equal(userInput: userInput);
-                        
                       }),
                     ),
                   ),
