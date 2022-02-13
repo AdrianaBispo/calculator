@@ -132,6 +132,35 @@ String _calc({required String operacao, required String valor1, required String 
   return _arredondar(resultado: resultado.toString()) + operation;
 } //_calc
 
+String _calc2({required String operacao, required String valor1, required String valor2}) { //operation.lenght >= 2
+  double resultado = 0;
+  //calcular.addAll(valor);
+  print('Operações que serão calculadas $operacao');
+
+  switch(operacao){
+    case '+':
+    
+      resultado = double.parse(valor1) + double.parse(valor2);
+      break;
+      
+    case '-':
+    
+      resultado = double.parse(valor1) - double.parse(valor2);
+      break;
+    case '/':
+    
+      resultado = double.parse(valor1) / double.parse(valor2);
+      break;
+    case '*':
+    
+      resultado = double.parse(valor1) * double.parse(valor2);
+      break;
+  }
+  
+  operation = operation[operation.length - 1];
+  print(operation);
+  return _arredondar(resultado: resultado.toString()) + operation;
+} //_calc
 
 String _arredondar({required String resultado}) {
   //arredonda o resultado
