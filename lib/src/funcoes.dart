@@ -75,7 +75,7 @@ String equal({required String userInput}) {
   if (finalInput.length >= 2 && finalInput[1] != ''){
     //tiver apenas uma casa
     
-  return _calc(operacao: operation[0], valor1: finalInput[0], valor2: finalInput[1]);
+  return _calc(operacao: operation[0].replaceAll('x', '*'), valor1: finalInput[0], valor2: finalInput[1]);
    
   } else if (finalInput.length == 1) {
      print('finalInput.length == 1');
