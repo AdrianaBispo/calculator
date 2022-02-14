@@ -64,22 +64,6 @@ ce({required String userInput}) {
   }
 }
 
-_operacoes({required String operador, required String userInput}) {
-  print('_OPERAÇÕES');
-  print(userInput.trim().split(RegExp(r'[/\x\-\+]')));
-  int casas = userInput.split(RegExp(r'[/\x\-\+]')).length;
-  print('casas $casas');
-  //print(operador.contains(RegExp(r'[/\*\-\+\x]')));
-
-  if (operador.contains(RegExp(r'[/\*\-\+\x]')) && casas == 2) {
-    // se e tiver e userInput tiver 1 casa.
-    print('_OPERACOES CHAMANDO EQUAL');
-    return operation;
-  } else {
-    return equal(userInput: userInput);
-  }
-}
-
 String equal({required String userInput}) {
   print('EQUAL');
   List finalInput =
@@ -103,6 +87,7 @@ String equal({required String userInput}) {
 }
 
 String _calc({required String operacao, required String valor1, required String valor2}) {
+  print('_calc');
   double resultado = 0;
   //calcular.addAll(valor);
   print('Operações que serão calculadas $operacao');
