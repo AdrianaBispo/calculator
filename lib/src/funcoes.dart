@@ -88,6 +88,9 @@ String equal({required String userInput}) {
 String _calc({required String operacao, required String valor1, required String valor2}) {
   print('_calc');
   double resultado = 0;
+  
+  operation = operation[operation.length - 1];
+  print(operation);
   //calcular.addAll(valor);
   print('Operações que serão calculadas $operacao');
 
