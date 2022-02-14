@@ -1,3 +1,4 @@
+
 String operation = '';
 
 incremented({required String valor, required String userInput}) {
@@ -6,28 +7,25 @@ incremented({required String valor, required String userInput}) {
     print('length == 1');
 
     userInput = valor;
+    return userInput; //funciona normalmente
 
-    print('USERINPUT DE INCREMENTED() ${userInput}');
-    return userInput;
-  } else if (valor.contains(RegExp(r'[\x\-\+/]'))) {
+  } else if (valor.contains(RegExp(r'[\x\-\+/]'))) {// caso tenha alguma operação matematica
     //se contem x - + /
-    print('VALOR CONTAIN X / - + ');
 
     operation += valor;
+    print('operation: $operation');
 
     userInput += valor;
-    //userInput += _operacoes(operador: operation, userInput: userInput); //recerbe o que é retornado em _operacoes
-    //print(operation.length >= 1);
 
-    print('OPERATION: ${operation}');
-    print('USERINPUT DE INCREMENTED() ${userInput}');
-
-    if (operation.length >= 2) {
+    if (operation.length >= 2) { //se tiver mais de 2 valores
       print('Chamando o calc');
-      userInput = equal(userInput: userInput);
+      userInput = equal(userInput: userInput); //recebe o que é retornado de equal
       return userInput;
     }
+    print('UserInput: $userInput');
+
     return userInput;
+
   } else {
     return userInput += valor; //vai incremanentado os numeros
   }
@@ -64,37 +62,18 @@ ce({required String userInput}) {
   }
 }
 
-_operacoes({required String operador, required String userInput}) {
-  print('_OPERAÇÕES');
-  print(userInput.trim().split(RegExp(r'[/\x\-\+]')));
-  int casas = userInput.split(RegExp(r'[/\x\-\+]')).length;
-  print('casas $casas');
-  //print(operador.contains(RegExp(r'[/\*\-\+\x]')));
-
-  if (operador.contains(RegExp(r'[/\*\-\+\x]')) && casas == 2) {
-    // se e tiver e userInput tiver 1 casa.
-    print('_OPERACOES CHAMANDO EQUAL');
-    return operation;
-  } else {
-    return equal(userInput: userInput);
-  }
-}
-
 String equal({required String userInput}) {
   print('EQUAL');
   List finalInput =
       userInput.replaceAll('x', '*').split(RegExp(r'[/\*\-\+\=]'));
-  print(finalInput);
-  double resultado = 0;
-  print('FINALINPUT LENGHT ${finalInput.length}');
-  //return resultado.toString();
+
   if (finalInput.length >= 2 && finalInput[1] != ''){
-    //tiver apenas uma casa
+    //se tiver mais de uma casa e a segunda casa for diferente de ''
     
-  return _calc(operacao: operation[0], valor1: finalInput[0], valor2: finalInput[1]);
+  return _calc(operacao: operation[0].replaceAll('x', '*'), valor1: finalInput[0], valor2: finalInput[1]);
    
   } else if (finalInput.length == 1) {
-     print('finalInput.length == 1');
+     //se o tamanho for igual a 1
 
     return finalInput[0]; //resultado.toString();
   } else{
@@ -103,7 +82,11 @@ String equal({required String userInput}) {
 }
 
 String _calc({required String operacao, required String valor1, required String valor2}) {
+  print('_calc');
   double resultado = 0;
+  
+  operation = operation[operation.length - 1];
+  print(operation);
   //calcular.addAll(valor);
   print('Operações que serão calculadas $operacao');
 
@@ -127,8 +110,6 @@ String _calc({required String operacao, required String valor1, required String 
       break;
   }
   
-  operation = operation[operation.length - 1];
-  print(operation);
   return _arredondar(resultado: resultado.toString()) + operation;
 } //_calc
 
@@ -164,10 +145,10 @@ String _calc2({required String operacao, required String valor1, required String
 
 String _arredondar({required String resultado}) {
   //arredonda o resultado
-  operation = operation[operation.length - 1];
+  //operation = operation[operation.length - 1];
   String decimalParte = resultado.split('.')[1];
 
-  if (decimalParte == 0) {
+  if (decimalParte == '0') {
     //Se o ultimo valor do double for 0
     print(double.parse(resultado).toInt()); //return ele como int
     resultado = double.parse(resultado).toInt().toString();
