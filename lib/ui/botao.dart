@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Botao extends StatefulWidget {
-  double fontsize;
-  Color textcolor;
-  Color backgroundColor;
-  String value;
+  final double fontsize;
+  final Color textcolor;
+  final Color backgroundColor;
+  final String value;
   void Function()? pressed;
 
   Botao({
@@ -29,7 +29,7 @@ class _BotaoState extends State<Botao> {
           widget.value,
           style: TextStyle(
             fontWeight: FontWeight.w300, //thin
-            fontSize: widget.fontsize, //32
+            fontSize: widget.fontsize, 
             color: widget.textcolor,
           ),
         ),
@@ -38,7 +38,6 @@ class _BotaoState extends State<Botao> {
           shape: const BeveledRectangleBorder(
             borderRadius: BorderRadius.all(Radius.zero),
           ),
-          //side: const BorderSide(color: Color /*(0xfff8f8ff)*/, width: 0.5),
         ),
         onPressed: widget.pressed,
       ),
