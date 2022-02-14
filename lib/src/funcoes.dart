@@ -152,7 +152,7 @@ String _arredondar({required String resultado}) {
   operation = operation[operation.length - 1];
   String decimalParte = resultado.split('.')[1];
 
-  if (decimalParte == 0) {
+  if (decimalParte == '0') {
     //Se o ultimo valor do double for 0
     print(double.parse(resultado).toInt()); //return ele como int
     resultado = double.parse(resultado).toInt().toString();
