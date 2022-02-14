@@ -6,10 +6,9 @@ incremented({required String valor, required String userInput}) {
     print('length == 1');
 
     userInput = valor;
+    return userInput; //funciona normalmente
 
-    print('USERINPUT DE INCREMENTED() ${userInput}');
-    return userInput;
-  } else if (valor.contains(RegExp(r'[\x\-\+/]'))) {
+  } else if (valor.contains(RegExp(r'[\x\-\+/]'))) {// caso tenha alguma operação matematica
     //se contem x - + /
     print('VALOR CONTAIN X / - + ');
 
@@ -24,7 +23,7 @@ incremented({required String valor, required String userInput}) {
 
     if (operation.length >= 2) {
       print('Chamando o calc');
-      userInput = equal(userInput: userInput);
+      userInput = equal(userInput: userInput); //recebe o que é retornado de equal
       return userInput;
     }
     return userInput;
