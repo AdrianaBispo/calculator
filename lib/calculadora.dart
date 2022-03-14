@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: size.width,
         height: size.height,
-        color: Colors.white,
+        color: const Color(0xff2c0033),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
@@ -39,11 +39,11 @@ class _HomePageState extends State<HomePage> {
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
                 height: size.height * .3, // 1/3
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                color: const Color(0xff2c0033),
                   border: Border(
                     bottom: BorderSide(
                       width: 0.7,
-                      color: Color(0xffe6e6e6),
+                      color: Color(0xff2c0033),
                     ),
                   ),
                 ),
@@ -52,8 +52,7 @@ class _HomePageState extends State<HomePage> {
                   style: const TextStyle(
                     fontSize: 60.0,
                     fontWeight: FontWeight.normal,
-                    color: Color(0xff242424),
-                    //overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
                   ),
                   textAlign: TextAlign.right,
                 ),
@@ -145,6 +144,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: Botao(
                       value: '/',
+                      textcolor: const Color(0xfffecc45),
                       pressed: () => setState(() {
                         userInput =
                             incremented(valor: '/', userInput: userInput);
@@ -196,6 +196,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: Botao(
                       value: 'x',
+                      textcolor: const Color(0xfffecc45),
                       pressed: () => setState(() {
                         userInput =
                             incremented(valor: 'x', userInput: userInput);
@@ -234,6 +235,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: Botao(
                       value: '+',
+                      textcolor: const Color(0xfffecc45),
                       pressed: () => setState(() {
                         userInput =
                             incremented(valor: '+', userInput: userInput);
@@ -244,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                     child: Botao(
                       fontsize: 32.0,
                       textcolor: Colors.white,
-                      backgroundColor: const Color(0xff242424),
+                      backgroundColor: const Color(0xfffecc45),
                       value: '=',
                       pressed: () => setState(() {
                         userInput = equal(userInput: userInput);
@@ -254,9 +256,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-          ],
-        ),
       ),
     );
-  }
-}
+  }}
