@@ -9,8 +9,8 @@ class Botao extends StatefulWidget {
 
   Botao({
     this.fontsize = 27.0,
-    this.textcolor = const Color(0xff242424),
-    this.backgroundColor = Colors.white,
+    this.textcolor = Colors.white,
+    this.backgroundColor = const Color(0xff2c0033),
     required this.value,
     required this.pressed,
   });
