@@ -96,7 +96,10 @@ class CalculatorController {
     log('_calc');
     double resultado = 0;
 
+    final int operationLength = operation.length;
+
     operation = operation[operation.length - 1];
+
     log(operation);
     //calcular.addAll(valor);
     log('Operações que serão calculadas $operacao');
@@ -116,13 +119,19 @@ class CalculatorController {
         resultado = double.parse(valor1) * double.parse(valor2);
         break;
     }
-
-    return _arredondar(resultado: resultado.toString()) + operation;
+    
+    if (operationLength >= 2){
+      return _arredondar(resultado: resultado.toString()) + operation;
+    }else {
+     operation = '';
+      
+      return _arredondar(resultado: resultado.toString());
+    }
+    
   } //_calc
 
 
   String _arredondar({required String resultado}) {
-    //arredonda o resultado
     String decimalParte = resultado.split('.')[1];
 
     if (decimalParte == '0') {
