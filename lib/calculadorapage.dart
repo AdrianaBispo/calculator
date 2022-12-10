@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-//ui
-import 'ui/botao.dart';
+//components
+import 'components/botao.dart';
 
-//src
-import 'src/funcoes.dart';
+//controller
+import 'controller/calculadora_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var userInput = '0';
+  CalculatorController controller = CalculatorController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '9',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                         valor: '9', userInput: userInput);
                                   }),
                                 ),
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '8',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                         valor: '8', userInput: userInput);
                                   }),
                                 ),
@@ -87,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '7',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                         valor: '7', userInput: userInput);
                                   }),
                                 ),
@@ -105,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '4',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '4',
                                       userInput: userInput,
                                     );
@@ -116,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '5',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '5',
                                       userInput: userInput,
                                     );
@@ -127,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '6',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '6',
                                       userInput: userInput,
                                     );
@@ -147,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '3',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '3',
                                       userInput: userInput,
                                     );
@@ -158,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '2',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '2',
                                       userInput: userInput,
                                     );
@@ -169,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Botao(
                                   value: '1',
                                   pressed: () => setState(() {
-                                    userInput = incremented(
+                                    userInput = controller.incremented(
                                       valor: '1',
                                       userInput: userInput,
                                     );
@@ -191,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                               child: Botao(
                                 value: 'C',
                                 pressed: () => setState(() {
-                                  userInput = ce(userInput: userInput);
+                                  userInput = controller.ce(userInput: userInput);
                                 }),
                               ),
                             ),
@@ -200,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                                 value: '/',
                                 textcolor: const Color(0xfffecc45),
                                 pressed: () => setState(() {
-                                  userInput = incremented(
+                                  userInput = controller.incremented(
                                       valor: '/', userInput: userInput);
                                 }),
                               ),
@@ -210,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                                 value: 'x',
                                 textcolor: const Color(0xfffecc45),
                                 pressed: () => setState(() {
-                                  userInput = incremented(
+                                  userInput = controller.incremented(
                                       valor: 'x', userInput: userInput);
                                 }),
                               ),
@@ -220,7 +221,7 @@ class _HomePageState extends State<HomePage> {
                                 value: '-',
                                 textcolor: const Color(0xfffecc45),
                                 pressed: () => setState(() {
-                                  userInput = incremented(
+                                  userInput = controller.incremented(
                                       valor: '-', userInput: userInput);
                                 }),
                               ),
@@ -241,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                               value: '.',
                               textcolor: const Color(0xfffecc45),
                               pressed: () => setState(() {
-                                userInput = incremented(
+                                userInput = controller.incremented(
                                     valor: '.', userInput: userInput);
                               }),
                             ),
@@ -250,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                             child: Botao(
                               value: '0',
                               pressed: () => setState(() {
-                                userInput = incremented(
+                                userInput = controller.incremented(
                                   valor: '0',
                                   userInput: userInput,
                                 );
@@ -262,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                               value: '+',
                               textcolor: const Color(0xfffecc45),
                               pressed: () => setState(() {
-                                userInput = incremented(
+                                userInput = controller.incremented(
                                     valor: '+', userInput: userInput);
                               }),
                             ),
@@ -274,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                               backgroundColor: const Color(0xfffecc45),
                               value: '=',
                               pressed: () => setState(() {
-                                userInput = equal(userInput: userInput);
+                                userInput = controller.equal(userInput: userInput);
                               }),
                             ),
                           ),
