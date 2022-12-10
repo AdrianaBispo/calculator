@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 //components
-import 'components/botao.dart';
+import '../components/botao.dart';
 
 //controller
-import 'controller/calculadora_controller.dart';
+import '../controller/calculadora_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
