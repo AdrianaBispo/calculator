@@ -5,7 +5,7 @@ class CalculatorController {
   
   String operation = '';
   
-  incremented({required String valor, required String userInput}) {
+  String incremented({required String valor, required String userInput}) {
     if (userInput[0] == '0' && userInput.length == 1) {
       //  pega o primeiro numero do usuario for 0
       log('length == 1');
