@@ -3,7 +3,7 @@
 
 <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 <h4 align="center"> 
-	🚧  To-do App 🚀 Concluído  🚧
+	🚧  Calculadora 🚀 Concluído  🚧
 </h4> <!-- Status -->
 
 <h2 id="sumario">Tabela de conteúdos</h2>
