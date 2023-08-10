@@ -18,7 +18,7 @@ class AppWidget extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Calculator',
         theme: AppTheme.theme,
-        home: const CalculatorPage(),
+        home: const HomePage(),
       ),
     );
   }
